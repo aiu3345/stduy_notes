@@ -60,7 +60,7 @@
 
 - ### Elastic Search 설치 및 실행
 
-   ```
+   ```shell
    # curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.4.tar.gz
    # tar xvzf elasticsearch-6.5.4.tar.gz
    # cd elasticsearch-6.5.4
@@ -69,13 +69,13 @@
 
    결과
 
-   ```
+   ```json
    # curl http://localhost:9200
 {
-  "name" : "node-1",
-  "cluster_name" : "my-application",
-  "cluster_uuid" : "-Gd4MgKHTnK8nefmwkWtnw",
-  "version" : {
+    "name" : "node-1",
+    "cluster_name" : "my-application",
+    "cluster_uuid" : "-Gd4MgKHTnK8nefmwkWtnw",
+    "version" : {
     "number" : "6.5.4",
     "build_flavor" : "default",
     "build_type" : "tar",
@@ -85,7 +85,30 @@
     "lucene_version" : "7.5.0",
     "minimum_wire_compatibility_version" : "5.6.0",
     "minimum_index_compatibility_version" : "5.0.0"
-  },
-  "tagline" : "You Know, for Search"
+    },
+    "tagline" : "You Know, for Search"
 }
    ```
+
+
+
+# Kibana
+- ### 정의
+   ```
+   - Elastic Search 데이터에서 통찰력을 얻는데 도움주는 Elastic Stack의 시각화 도구
+   - 막대그래프, 지도, 선형 차트, 시계열 등 다양한 시각화 기능 제공
+   - REST API 요청 작성 및 테스트할 수 있는 기능 제공
+   ```
+
+- ### Kibana 설치 및 실행
+
+   ```shell
+   # curl -L -O https://artifacts.elastic.co/downloads/kibana/kibana-6.5.4-darwin-x86_64.tar.gz
+   # tar xvzf kibana-6.5.4-darwin-x86_64.tar.gz
+   # cd kibana-6.5.4-darwin-x86_64
+   # bin/kibana
+   ```
+
+    결과
+
+   
