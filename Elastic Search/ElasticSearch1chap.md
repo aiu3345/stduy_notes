@@ -30,7 +30,7 @@
     * 다양한 프로그래밍 언어에서 사용할 수 있도록 클라이언트 라이브러리를 제공한다.
       (## Java, C# Python, PHP, Perl, Ruby 등)
     * REST(Representational State Transfer) API로 다양한 제어가 가능하다 
-      [참고문서-Elastic Search Rest API](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html)
+    * 참고문서-Elastic Search Rest API](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html)
     ```
 
   - **운영 및 확장 용이**
@@ -41,7 +41,7 @@
 
   - **NRT(Near-Real Time)**
 
-    ```
+    ```markdown
     데이터(문서) 저장 및 색인 후 거의 1초 이내에 쿼리를 통해 확인 가능하며 초당 수백~수천개의 도큐먼트 색인 생성하고 거의 실시간(Near-RealTime)으로 검색할 수 있다.
     ```
 
@@ -58,6 +58,17 @@
     ```
 
 
-- ### 설치
+- ### Elastic Search 설치 및 실행
 
-   - 
+   ```
+   # curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.4.tar.gz
+   # tar xvzf elasticsearch-6.5.4.tar.gz
+   # cd elasticsearch-6.5.4
+   # bin/elasticsearch
+   ```
+
+   결과
+
+   ```
+   # curl
+   ```
