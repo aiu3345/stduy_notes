@@ -21,7 +21,8 @@
   - **분석**
 
     ```
-
+    다양한 환경에서 분석 도구로 사용 가능하며
+    분석을 위해 폭 넓고 다양한 집계(Aggregation) 기능을 지원 다양한 데이터 타입에 적용 가능
     ```
 
   - **풍부한 클라이언트 라이브러리 및 Rest API**
@@ -119,12 +120,10 @@
    ## default (http://localhost:9200)
    elasticsearch.url="http://localhost:9200"
    ```
-   - 실행 
+   - 실행
    ```shell
    # cd kibana-6.5.4-darwin-x86_64
    # bin/kibana
    ```
    -  결과
      ![kibna 실행](.\img\kibana_run.png)
-
-     
