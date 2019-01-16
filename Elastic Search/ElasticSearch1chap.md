@@ -101,13 +101,13 @@
    ```
 
 - ### Kibana 설치 및 실행
-   - ** 다운로드 및 압축 풀기 **
+   - 다운로드 및 압축 풀기
 
    ```shell
    # curl -L -O https://artifacts.elastic.co/downloads/kibana/kibana-6.5.4-darwin-x86_64.tar.gz
    # tar xvzf kibana-6.5.4-darwin-x86_64.tar.gz
    ```
-   - ** config 수정 **
+   - config 수정
    ```shell
    # cd kibana-6.5.4-darwin-x86_64
    # vim config/kibana.yml
@@ -119,10 +119,12 @@
    ## default (http://localhost:9200)
    elasticsearch.url="http://localhost:9200"
    ```
-   - ** 실행 **
+   - 실행 
    ```shell
    # cd kibana-6.5.4-darwin-x86_64
    # bin/kibana
    ```
-    결과
-    ![kibna 실행](./img/kibana_run.png)
+   -  결과
+     ![kibna 실행](.\img\kibana_run.png)
+
+     
