@@ -11,6 +11,7 @@
 
     ```
     사전에 정의한 스키마 나 기준 필요 없이 검색 문서 기준(Document-Oriented) 동적인 열과 데이터 타입 형태의 입력을 지원
+    (다만 추가 기능 이용 위해 타입 정의가 필요한 경우도 있음)
     ```
 
   - **검색**
@@ -59,37 +60,73 @@
     ```
 
 
-- ### Elastic Search 설치 및 실행
+- ### Elastic Search 설치 및 실행(튜토리얼)
 
-   ```shell
-   # curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.4.tar.gz
-   # tar xvzf elasticsearch-6.5.4.tar.gz
-   # cd elasticsearch-6.5.4
-   # bin/elasticsearch
-   ```
+  - 다운로드
 
-   결과
+      ```shell
+      $ curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.4.tar.gz
+      $ tar xvzf elasticsearch-6.5.4.tar.gz
+      ```
 
-   ```json
-   # curl http://localhost:9200
-{
-    "name" : "node-1",
-    "cluster_name" : "my-application",
-    "cluster_uuid" : "-Gd4MgKHTnK8nefmwkWtnw",
-    "version" : {
-    "number" : "6.5.4",
-    "build_flavor" : "default",
-    "build_type" : "tar",
-    "build_hash" : "d2ef93d",
-    "build_date" : "2018-12-17T21:17:40.758843Z",
-    "build_snapshot" : false,
-    "lucene_version" : "7.5.0",
-    "minimum_wire_compatibility_version" : "5.6.0",
-    "minimum_index_compatibility_version" : "5.0.0"
-    },
-    "tagline" : "You Know, for Search"
-}
-   ```
+  - config 수정
+
+      - elsaticsearch.yml 수정
+
+      ```shell
+      $ cd elasticsearch-6.5.4
+      $ vim config/elasticsearch.yml
+      ```
+      ```bash
+      ## port 정보 수정 (default: 9200)
+      http.port: 9200
+      ## cluster name 지정 (구성 시)
+      cluster.name: my-cluster
+      ## node name 지정
+      node.name: node-1
+      ## 데이터파일 및 로그 저장 경로 지정
+      path.data: /Users/Shared/data/esdata
+      path.logs: /Users/Shared/logs/eslog
+      ```
+
+      - jvm 옵션 조정
+
+      ```shell
+      # vim config/jvm.options
+      ## 사용 jvm 옵션 별도 지정 및 조정
+      ```
+
+      
+
+  - 실행 
+
+      ```shell
+      $ cd elasticsearch-6.5.4
+      $ bin/elasticsearch
+      ```
+
+  - 결과 확인
+
+       ```json
+       # curl http://localhost:9200
+       {
+        "name" : "node-1",
+        "cluster_name" : "my-cluster",
+        "cluster_uuid" : "-Gd4MgKHTnK8nefmwkWtnw",
+        "version" : {
+        "number" : "6.5.4",
+        "build_flavor" : "default",
+        "build_type" : "tar",
+        "build_hash" : "d2ef93d",
+        "build_date" : "2018-12-17T21:17:40.758843Z",
+        "build_snapshot" : false,
+        "lucene_version" : "7.5.0",
+        "minimum_wire_compatibility_version" : "5.6.0",
+        "minimum_index_compatibility_version" : "5.0.0"
+        },
+        "tagline" : "You Know, for Search"
+       }
+       ```
 
 
 
@@ -105,13 +142,13 @@
    - 다운로드 및 압축 풀기
 
    ```shell
-   # curl -L -O https://artifacts.elastic.co/downloads/kibana/kibana-6.5.4-darwin-x86_64.tar.gz
-   # tar xvzf kibana-6.5.4-darwin-x86_64.tar.gz
+   $ curl -L -O https://artifacts.elastic.co/downloads/kibana/kibana-6.5.4-darwin-x86_64.tar.gz
+   $ tar xvzf kibana-6.5.4-darwin-x86_64.tar.gz
    ```
    - config 수정
    ```shell
-   # cd kibana-6.5.4-darwin-x86_64
-   # vim config/kibana.yml
+   $ cd kibana-6.5.4-darwin-x86_64
+   $ vim config/kibana.yml
    ```
    ```bash
    ## port 정보 수정 (default: 5601)
@@ -122,15 +159,15 @@
    ```
    - 실행
    ```shell
-   # cd kibana-6.5.4-darwin-x86_64
-   # bin/kibana
+   $ cd kibana-6.5.4-darwin-x86_64
+   $ bin/kibana
    ```
    -  결과
      ![kibna 실행](.\img\kibana_run.png)
 
 # Elastic Stack
 
-- ### 구성
+- ### 구성 (구성 패키지)
   ![elastic stack 구성](.\img\elastic stack.PNG)
   - Elastic Search
   - Kibana
