@@ -1,2 +1,2 @@
-# stduy_tm
-study tm (private)
+# stduy private
+study private repo
