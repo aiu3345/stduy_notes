@@ -1,2 +1,2 @@
-# stduy private
+# stduy note private
 study private repo
